@@ -1,38 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --type-first: Helvetica, Arial, sans-serif;
+    --type-secton: "Spectral", georgia;
+
+    margin: 0px;
+    padding-top: 4rem;
+    color: #333;
+    font-family: var(--type-first);
+
+}
+
+h1, h2, h3, p {
+    margin: 0px;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button, input {
+    display: block;
+    font-size: 1rem;
+    font-family: var(--type-first);
+    color: #333;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 10rem);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.AppBody {
+    flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    max-width: 50rem;
+    padding: 0 1rem;
+    margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mainContainer {
+    margin-top: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+    font-family: var(--type-secton);
+    line-height: 1;
+    font-size: 3rem;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title:after {
+    content: "";
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fb1;
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    border-radius: 0.2rem;
+    z-index: -1;
+}
+
+.animeLeft {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: animeLeft 0.3s forwards;
+}
+
+@keyframes animeLeft {
+    to {
+        opacity: 1;
+        transition: initial;
+    }
+}
+
+.VictoryContainer {
+    height: initial !important;
 }
